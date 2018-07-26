@@ -1,0 +1,11 @@
+*.egg-info
+*.py[co]
+*.swp
+/.cache
+/.coverage
+/.tox
+/coverage-html
+/dist
+/venv
+.pytest_cache/
+logs/

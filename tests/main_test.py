@@ -10,6 +10,10 @@ class TestCollectFiles(object):
         files = main.collect_files(Path(tmpdir.join('foo.py')))
         assert files == [tmpdir.join('foo.py')]
 
+    def test_single_file_non_python(self, tmpdir):
+        tmpdir.join('foo.rb').write('')
+        assert main.collect_files(Path(tmpdir.join('foo.rb'))) == []
+
     def test_module(self, tmpdir):
         tmpdir.join('foo.py').write('')
         files = list(main.collect_files(Path(tmpdir)))

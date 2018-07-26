@@ -5,7 +5,7 @@ from pathlib import Path
 
 def collect_files(path):
     if path.is_file():
-        return [path]
+        return [path] if path.suffix == '.py' else []
 
     return path.glob('**/*.py')
 
